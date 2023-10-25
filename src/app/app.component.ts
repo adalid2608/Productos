@@ -70,7 +70,7 @@ export class AppComponent {
       "cantidad": 4
     }
   ]
-   numero: number = 0;
+   numero: number = 1;
 
   incremento() {
     this.numero++;
