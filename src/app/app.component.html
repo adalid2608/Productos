@@ -1,0 +1,29 @@
+<h1 class=" ml-4 mt-5 text-3xl font-bold">My Shopping Bag</h1>
+<div class="flex flex-col">
+  <div class="w-11/12 h-32 flex justify-center ml-4" *ngFor="let producto of listaProductos">
+  <div class="w-1/4 my-1 flex items-center bg-gray-200 rounded-l-lg">
+    <img src={{producto.imagen}} class="h-16 ml-2">
+  </div>
+  <div class="w-2/4 my-1 items-center bg-gray-200">
+      <p class="mt-5 font-bold text-xs">{{producto.nombre}}</p>
+      <h2 class="text-neutral-500 text-xs">Qty: {{producto.cantidad}}</h2>
+
+      <div>
+        <button (click)="decremento()" 
+        [disabled]="numero <=1" 
+        class="mr-5 w-6 h-6 rounded-full border-2 border-amber-500">-
+      </button>
+        <span>{{numero}}</span>
+      <button (click)="incremento()" 
+        [disabled]="numero >= 10" 
+        class="ml-5 w-6 h-6 rounded-full border-2 border-amber-500" >+
+      </button>
+      </div>
+
+  </div>
+  <div class="w-1/4 my-1 flex flex items-end justify-center bg-gray-200 rounded-r-lg">
+      <p>$ {{producto.precio}}</p>
+  </div>
+
+</div>
+<router-outlet></router-outlet>
